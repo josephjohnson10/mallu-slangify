@@ -1,13 +1,22 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  serverExternalPackages: [
+    'genkit',
+    '@genkit-ai/core',
+    '@genkit-ai/googleai',
+    '@genkit-ai/next',
+    '@opentelemetry/sdk-node',
+    'handlebars',
+    'dotprompt',
+    'wav',
+  ],
   images: {
     remotePatterns: [
       {
@@ -18,15 +27,21 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  serverActions: {
-    bodySizeLimit: '2mb',
-    serverActions: true,
-  },
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb',
     },
-    serverActionTimeout: 120,
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [
+        ...(Array.isArray(config.externals) ? config.externals : config.externals ? [config.externals] : []),
+        'handlebars',
+        '@opentelemetry/exporter-jaeger',
+        '@genkit-ai/firebase',
+      ];
+    }
+    return config;
   },
 };
 
