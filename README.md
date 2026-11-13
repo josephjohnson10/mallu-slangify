@@ -12,6 +12,20 @@ An AI-powered regional dialect translation engine that converts Malayalam / Mang
 
 ---
 
+## 📸 Application Interface
+
+### Desktop View
+<p align="center">
+  <img src="./docs/images/desktop_ui.png" alt="Mallu Slangify Desktop Interface" width="900" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</p>
+
+### Mobile View
+<p align="center">
+  <img src="./docs/images/mobile_ui.png" alt="Mallu Slangify Mobile Interface" width="360" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</p>
+
+---
+
 ## 🚀 Overview
 
 Regional Malayalam varies significantly across Kerala—from the distinct cadence and idioms of Kannur, Kozhikode, and Malappuram, to the colloquial phrases of Thrissur, Kochi, and Trivandrum. 
