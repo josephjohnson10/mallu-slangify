@@ -1,120 +1,89 @@
 # Mallu Slangify 🎯
 
-## Basic Details
-**Team Name:** Homies
+[![Live Demo](https://img.shields.io/badge/Live_Demo-malluslangify.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://malluslangify.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-14%2B-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-GenAI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![TinkerHub](https://img.shields.io/badge/Built_At-TinkerHub_2025-FF5722?style=for-the-badge)](https://tinkerhub.org)
 
-**Team Members**
-- **Team Lead:** Joseph Johnson
+An AI-powered regional dialect translation engine that converts Malayalam / Manglish input sentences into authentic native slangs across all 14 districts of Kerala with dynamic intensity controls and cultural linguistic insights.
 
----
-
-## Project Description
-The Basic Aim is to Input a language and Generate the output as the same language in native slangs.
-
-### The Problem (that doesn't exist)
-The problem that doesn't exist here is that people having the same mother tongue have difficulty in speaking with other natives.
-
-### The Solution (that nobody asked for)
-The only solution that exists is parsing a language and converting the same language with different slang without changing the meaning of the language.
+🔗 **Live Application:** [malluslangify.vercel.app](https://malluslangify.vercel.app)
 
 ---
 
-## Technical Details
+## 🚀 Overview
 
-### Technologies/Components Used
+Regional Malayalam varies significantly across Kerala—from the distinct cadence and idioms of Kannur, Kozhikode, and Malappuram, to the colloquial phrases of Thrissur, Kochi, and Trivandrum. 
 
-**For Software:**
+**Mallu Slangify** translates input sentences while preserving context and meaning, applying authentic dialect vocabulary, phonetic shifts, and local idioms tailored to specific districts.
 
--   **Languages used:** TypeScript, JavaScript, CSS
--   **Frameworks used:** Next.js, React
--   **Libraries used:** Genkit, Google AI for Node.js, ShadCN UI, Tailwind CSS, Lucide React, Zod, React Hook Form, `wav`.
--   **Tools used:** Node.js, npm, Next.js CLI, Genkit CLI
-
-**For Hardware:**
-
--   **List main components:** Not Applicable
--   **List specifications:** Not Applicable
--   **List tools required:** Not Applicable
+### Key Capabilities
+- **14-District Regional Coverage:** Real-time dialect transformations tailored for Kannur, Kozhikode, Malappuram, Thrissur, Ernakulam, Trivandrum, and all other Kerala districts.
+- **Slang Intensity Tuning:** Selectable intensity parameters ranging from mild colloquialisms to heavy native slang.
+- **Cultural Context Cards:** Contextual linguistic breakdown explaining district-specific vocabulary, etymology, and popular idioms.
+- **Serverless Edge Performance:** Built with Next.js App Router and Server Actions for low-latency streaming inference.
 
 ---
 
-## Implementation
+## 🛠️ Architecture & Tech Stack
 
-### For Software:
-
-**Installation**
-```bash
-# Set your Gemini API Key in a .env file
-GEMINI_API_KEY=YOUR_API_KEY_HERE
-
-# Install dependencies
-npm install
+```text
+┌─────────────────┐       Server Actions       ┌───────────────────────────┐
+│   React / UI    │ ─────────────────────────> │   Next.js App Server      │
+│ (Tailwind/Radix)│ <───────────────────────── │                           │
+└─────────────────┘      Structured JSON       └─────────────┬─────────────┘
+                                                             │
+                                                      Genkit SDK / API
+                                                             │
+                                                             ▼
+                                               ┌───────────────────────────┐
+                                               │   Google Gemini Engine    │
+                                               │ (Dialect & NLP Workflows) │
+                                               └───────────────────────────┘
 ```
 
-**Run**
-```bash
-npm run dev
-```
-The application will be available at `http://localhost:9002`.
+- **Frontend:** Next.js (App Router), React, Tailwind CSS, ShadCN UI, Lucide Icons.
+- **AI / NLP Backend:** Google Gemini API integrated via Firebase Genkit.
+- **Type Safety & Validation:** TypeScript, Zod Schema Validation, React Hook Form.
+- **Deployment:** Vercel Edge Network.
 
 ---
 
-## Project Documentation
+## 💻 Local Setup & Development
 
-### For Software:
+### Prerequisites
+- Node.js 18.x or later
+- npm or pnpm
+- Google Gemini API Key ([Google AI Studio](https://aistudio.google.com/))
 
-**Screenshots (Add at least 3)**
+### Installation
 
-![Screenshot1](https://placehold.co/800x600.png?text=Main+UI)
-**Caption:** The main user interface where users input a Manglish sentence and select slang intensity.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/josephjohnson10/mallu-slangify.git
+   cd mallu-slangify
+   ```
 
-![Screenshot2](https://placehold.co/800x600.png?text=Translation+Results)
-**Caption:** Display of the translated sentence across all 14 districts of Kerala.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-![Screenshot3](https://placehold.co/800x600.png?text=Cultural+Insights)
-**Caption:** The cultural insights card showing interesting facts and popular phrases for a selected district.
+3. **Configure Environment Variables:**
+   Create a `.env.local` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
 
-**Diagrams**
-
-![Workflow](https://placehold.co/800x400.png?text=Application+Architecture)
-**Caption:** The application follows a three-tier architecture: Frontend (React/Next.js), Server Actions (as a secure bridge), and Backend AI Flows (Genkit/Google AI).
-
-### For Hardware:
-
-**Schematic & Circuit**
-
--   ![Circuit](https://placehold.co/600x400.png?text=Not+Applicable)
-    **Caption:** Not Applicable
-
--   ![Schematic](https://placehold.co/600x400.png?text=Not+Applicable)
-    **Caption:** Not Applicable
-
-**Build Photos**
-
--   ![Components](https://placehold.co/600x400.png?text=Not+Applicable)
-    **Caption:** Not Applicable
-
--   ![Build](https://placehold.co/600x400.png?text=Not+Applicable)
-    **Caption:** Not Applicable
-
--   ![Final](https://placehold.co/600x400.png?text=Not+Applicable)
-    **Caption:** Not Applicable
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) (or `http://localhost:9002` if configured) in your browser.
 
 ---
 
-## Project Demo
+## 🏆 Origin & Acknowledgements
 
-### Video
-- **[Add your demo video link here]** Explain what the video demonstrates
-
-### Additional Demos
-- **[Add any extra demo materials/links]**
-
----
-
-## Team Contributions
-- **Joseph Johnson:** FULL PROJECT
-
----
-
-Made with ❤️ at TinkerHub Useless Projects
+Originally engineered by **Joseph Johnson** (Team Lead, *Team Homies*) during the **TinkerHub Useless Projects Hackathon 2025**, exploring playful generative AI and regional colloquial NLP.
